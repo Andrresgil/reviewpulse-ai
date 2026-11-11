@@ -67,8 +67,6 @@ st.set_page_config(page_title="ACA 2 · Sentimiento de reseñas", page_icon="�
 st.title("🛒 Sentimiento de reseñas de productos")
 st.write(
     "Escribe una reseña en inglés o español. DistilBERT estima si expresa "
-    "una opinión negativa, neutra o positiva. Las reseñas en español se traducen "
-    "al inglés antes del análisis."
 )
 
 if not MODEL_REPO_ID or MODEL_REPO_ID.partition("/")[0].startswith("TU_"):
@@ -130,11 +128,11 @@ if st.button("Analizar reseña", type="primary"):
                 st.warning(
                     "La reseña supera el límite del traductor; solo se tradujo el comienzo."
                 )
-            st.write("**Traducción que recibió el clasificador:**", texto_modelo)
-            st.caption(
-                "La traducción puede cambiar matices de la opinión; "
-                "esta ruta en español aún no tiene una evaluación cuantitativa propia."
-            )
+            #st.write("**Traducción que recibió el clasificador:**", texto_modelo)
+            #st.caption(
+            #    "La traducción puede cambiar matices de la opinión; "
+            #    "esta ruta en español aún no tiene una evaluación cuantitativa propia."
+            #)
 
         max_length = int(configuracion["max_length"])
         longitud = len(tokenizador(texto_modelo, truncation=False)["input_ids"])
