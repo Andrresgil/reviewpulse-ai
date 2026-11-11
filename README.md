@@ -15,9 +15,3 @@ En 9.098 reseñas de prueba **en inglés**: exactitud 93,58 %, F1 macro 0,6720.
 El F1 de la clase neutra fue 0,3283. Estos resultados no miden la ruta en español,
 que requiere una evaluación separada con reseñas etiquetadas en español. Los datos
 y el entrenamiento se documentan en el cuaderno ACA 2.
-
-## Actualización de Streamlit
-
-Sube `app.py` y `requirements.txt` a la raíz del repositorio de GitHub. Streamlit
-Community Cloud reconstruirá la aplicación al recibir el cambio. El traductor y
-el clasificador se descargan desde Hugging Face; no subas los pesos ni los CSV.
