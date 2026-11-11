@@ -1,6 +1,8 @@
 streamlit>=1.40,<2
-transformers>=4.57,<6
+transformers>=4.57,<5
 torch>=2.4,<3
 huggingface_hub>=0.34
 pandas>=2.2
 safetensors>=0.4
+sentencepiece>=0.2,<1
+sacremoses>=0.1,<1
