@@ -45,7 +45,7 @@ st.write(
     "una opinión negativa, neutra o positiva."
 )
 
-if MODEL_REPO_ID.startswith("Andrresgil/"):
+if not MODEL_REPO_ID or MODEL_REPO_ID.partition("/")[0].startswith("TU_"):
     st.info(
         "Antes de publicar la app, reemplaza TU_USUARIO en MODEL_REPO_ID "
         "por tu usuario y repositorio de Hugging Face."
