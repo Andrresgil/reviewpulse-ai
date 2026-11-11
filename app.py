@@ -49,7 +49,11 @@ def traducir_al_ingles(texto: str, tokenizador, modelo):
 
 def predecir(texto: str, tokenizador, modelo, max_length: int):
     entradas = tokenizador(
-        texto, return_tensors="pt", truncation=True, max_length=max_length
+        texto,
+        return_tensors="pt",
+        truncation=True,
+        max_length=max_length,
+        return_token_type_ids=False,
     )
     with torch.inference_mode():
         puntuaciones = modelo(**entradas).logits
@@ -63,6 +67,8 @@ st.set_page_config(page_title="ACA 2 · Sentimiento de reseñas", page_icon="�
 st.title("🛒 Sentimiento de reseñas de productos")
 st.write(
     "Escribe una reseña en inglés o español. DistilBERT estima si expresa "
+    "una opinión negativa, neutra o positiva. Las reseñas en español se traducen "
+    "al inglés antes del análisis."
 )
 
 if not MODEL_REPO_ID or MODEL_REPO_ID.partition("/")[0].startswith("TU_"):
