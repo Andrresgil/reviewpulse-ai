@@ -63,8 +63,6 @@ st.set_page_config(page_title="ACA 2 · Sentimiento de reseñas", page_icon="�
 st.title("🛒 Sentimiento de reseñas de productos")
 st.write(
     "Escribe una reseña en inglés o español. DistilBERT estima si expresa "
-    "una opinión negativa, neutra o positiva. Las reseñas en español se traducen "
-    "al inglés antes del análisis."
 )
 
 if not MODEL_REPO_ID or MODEL_REPO_ID.partition("/")[0].startswith("TU_"):
